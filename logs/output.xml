@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20230424 17:31:19.665" rpa="false" schemaversion="2">
+<suite id="s1" name="Casos" source="C:\Users\Diego Teixeira\Desktop\TradeMap\tests\Casos.robot">
+<test id="s1-t1" name="Deve validar a conta usando o CPF">
+<kw name="Abrir o Navegador" library="resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 17:31:19.888" level="INFO">Opening browser 'Chrome' to base url 'https://portal.trademap.com.br/'.</msg>
+<status status="PASS" starttime="20230424 17:31:19.888" endtime="20230424 17:31:27.643"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230424 17:31:27.643" endtime="20230424 17:31:27.790"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:19.887" endtime="20230424 17:31:27.790"/>
+</kw>
+<kw name="Dado que estou na pagina de login da TradeMap" library="resource">
+<kw name="Acessar a página home do site" library="resource">
+<doc>LOGIN</doc>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>TradeMap</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 17:31:27.807" level="INFO">Page title is 'TradeMap'.</msg>
+<status status="PASS" starttime="20230424 17:31:27.793" endtime="20230424 17:31:27.807"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>time_=2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 17:31:29.820" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230424 17:31:27.807" endtime="20230424 17:31:29.820"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:27.792" endtime="20230424 17:31:29.820"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:27.791" endtime="20230424 17:31:29.821"/>
+</kw>
+<kw name="Quando coloco o login usando o CPF e senha" library="resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ACESSAR}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 17:31:29.823" endtime="20230424 17:31:29.855"/>
+</kw>
+<kw name="Login with" library="resource">
+<arg>${CPF}</arg>
+<arg>${SENHA_GERAL}</arg>
+<doc>CASOS DE TESTES VALIDOS</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${LOGIN}</arg>
+<arg>text=${uname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 17:31:29.856" level="INFO">Typing text '36583161877' into text field 'cpf'.</msg>
+<status status="PASS" starttime="20230424 17:31:29.855" endtime="20230424 17:31:29.967"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${SENHA}</arg>
+<arg>text=${pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 17:31:29.968" level="INFO">Typing text 'Teste2023.' into text field 'password'.</msg>
+<status status="PASS" starttime="20230424 17:31:29.967" endtime="20230424 17:31:30.080"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:29.855" endtime="20230424 17:31:30.080"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230424 17:31:30.256" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230424 17:31:30.081" endtime="20230424 17:31:30.256"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:29.822" endtime="20230424 17:31:30.256"/>
+</kw>
+<kw name="E Quando clico em Entrar na minha conta" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ACESSAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 17:31:30.257" level="INFO">Clicking element '//button[normalize-space()='Entrar na minha conta']'.</msg>
+<status status="PASS" starttime="20230424 17:31:30.256" endtime="20230424 17:31:30.317"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:30.256" endtime="20230424 17:31:30.317"/>
+</kw>
+<kw name="Então deve logar e entrar na página da home da TradeMap" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 17:31:30.325" level="INFO">Page title is 'TradeMap'.</msg>
+<status status="PASS" starttime="20230424 17:31:30.319" endtime="20230424 17:31:30.325"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 17:31:35.335" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230424 17:31:30.325" endtime="20230424 17:31:35.336"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:30.318" endtime="20230424 17:31:35.336"/>
+</kw>
+<kw name="Fechar o Navegador" library="resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 17:31:35.339" endtime="20230424 17:31:37.552"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:35.338" endtime="20230424 17:31:37.553"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:19.886" endtime="20230424 17:31:37.554"/>
+</test>
+<test id="s1-t2" name="Deve validar a conta usando o Email">
+<kw name="Abrir o Navegador" library="resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 17:31:37.558" level="INFO">Opening browser 'Chrome' to base url 'https://portal.trademap.com.br/'.</msg>
+<status status="PASS" starttime="20230424 17:31:37.558" endtime="20230424 17:31:43.499"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230424 17:31:43.499" endtime="20230424 17:31:43.633"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:37.558" endtime="20230424 17:31:43.634"/>
+</kw>
+<kw name="Dado que estou na pagina de login da TradeMap" library="resource">
+<kw name="Acessar a página home do site" library="resource">
+<doc>LOGIN</doc>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>TradeMap</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 17:31:43.652" level="INFO">Page title is 'TradeMap'.</msg>
+<status status="PASS" starttime="20230424 17:31:43.639" endtime="20230424 17:31:43.653"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>time_=2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 17:31:45.668" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230424 17:31:43.654" endtime="20230424 17:31:45.668"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:43.638" endtime="20230424 17:31:45.668"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:43.636" endtime="20230424 17:31:45.669"/>
+</kw>
+<kw name="Quando coloco o Login usando o email e senha" library="resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ACESSAR}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 17:31:45.669" endtime="20230424 17:31:45.702"/>
+</kw>
+<kw name="Login with" library="resource">
+<arg>${EMAIL}</arg>
+<arg>${SENHA_GERAL}</arg>
+<doc>CASOS DE TESTES VALIDOS</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${LOGIN}</arg>
+<arg>text=${uname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 17:31:45.704" level="INFO">Typing text 'diegoeana14@gmail.com' into text field 'cpf'.</msg>
+<status status="PASS" starttime="20230424 17:31:45.704" endtime="20230424 17:31:45.908"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${SENHA}</arg>
+<arg>text=${pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 17:31:45.909" level="INFO">Typing text 'Teste2023.' into text field 'password'.</msg>
+<status status="PASS" starttime="20230424 17:31:45.908" endtime="20230424 17:31:46.018"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:45.703" endtime="20230424 17:31:46.018"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230424 17:31:46.215" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230424 17:31:46.018" endtime="20230424 17:31:46.216"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:45.669" endtime="20230424 17:31:46.216"/>
+</kw>
+<kw name="E Quando clico em Entrar na minha conta" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ACESSAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 17:31:46.217" level="INFO">Clicking element '//button[normalize-space()='Entrar na minha conta']'.</msg>
+<status status="PASS" starttime="20230424 17:31:46.217" endtime="20230424 17:31:46.292"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:46.216" endtime="20230424 17:31:46.292"/>
+</kw>
+<kw name="Então deve logar e entrar na página da home da TradeMap" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 17:31:46.300" level="INFO">Page title is 'TradeMap'.</msg>
+<status status="PASS" starttime="20230424 17:31:46.292" endtime="20230424 17:31:46.300"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 17:31:51.306" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230424 17:31:46.300" endtime="20230424 17:31:51.306"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:46.292" endtime="20230424 17:31:51.306"/>
+</kw>
+<kw name="Fechar o Navegador" library="resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 17:31:51.308" endtime="20230424 17:31:53.503"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:51.307" endtime="20230424 17:31:53.504"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:37.556" endtime="20230424 17:31:53.505"/>
+</test>
+<test id="s1-t3" name="Deve validar a conta usando o Telefone">
+<kw name="Abrir o Navegador" library="resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 17:31:53.509" level="INFO">Opening browser 'Chrome' to base url 'https://portal.trademap.com.br/'.</msg>
+<status status="PASS" starttime="20230424 17:31:53.508" endtime="20230424 17:31:59.616"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230424 17:31:59.616" endtime="20230424 17:31:59.764"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:53.508" endtime="20230424 17:31:59.764"/>
+</kw>
+<kw name="Dado que estou na pagina de login da TradeMap" library="resource">
+<kw name="Acessar a página home do site" library="resource">
+<doc>LOGIN</doc>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>TradeMap</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 17:31:59.781" level="INFO">Page title is 'TradeMap'.</msg>
+<status status="PASS" starttime="20230424 17:31:59.770" endtime="20230424 17:31:59.781"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>time_=2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 17:32:01.789" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230424 17:31:59.781" endtime="20230424 17:32:01.789"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:59.769" endtime="20230424 17:32:01.789"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:59.767" endtime="20230424 17:32:01.789"/>
+</kw>
+<kw name="Quando coloco o Login usando o telefone e senha" library="resource">
+<doc>CASOS DE TESTE INVALIDO</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ACESSAR}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 17:32:01.790" endtime="20230424 17:32:01.820"/>
+</kw>
+<kw name="Login with" library="resource">
+<arg>${TELEFONE}</arg>
+<arg>${SENHA_GERAL}</arg>
+<doc>CASOS DE TESTES VALIDOS</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${LOGIN}</arg>
+<arg>text=${uname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 17:32:01.821" level="INFO">Typing text '11981003830' into text field 'cpf'.</msg>
+<status status="PASS" starttime="20230424 17:32:01.821" endtime="20230424 17:32:01.933"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${SENHA}</arg>
+<arg>text=${pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 17:32:01.936" level="INFO">Typing text 'Teste2023.' into text field 'password'.</msg>
+<status status="PASS" starttime="20230424 17:32:01.933" endtime="20230424 17:32:02.037"/>
+</kw>
+<status status="PASS" starttime="20230424 17:32:01.820" endtime="20230424 17:32:02.037"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230424 17:32:02.240" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230424 17:32:02.037" endtime="20230424 17:32:02.241"/>
+</kw>
+<status status="PASS" starttime="20230424 17:32:01.790" endtime="20230424 17:32:02.241"/>
+</kw>
+<kw name="E Quando clico em Entrar na minha conta" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ACESSAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 17:32:02.242" level="INFO">Clicking element '//button[normalize-space()='Entrar na minha conta']'.</msg>
+<status status="PASS" starttime="20230424 17:32:02.241" endtime="20230424 17:32:02.324"/>
+</kw>
+<status status="PASS" starttime="20230424 17:32:02.241" endtime="20230424 17:32:02.325"/>
+</kw>
+<kw name="Então deve logar e entrar na página da home da TradeMap" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 17:32:02.334" level="INFO">Page title is 'TradeMap'.</msg>
+<status status="PASS" starttime="20230424 17:32:02.327" endtime="20230424 17:32:02.335"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 17:32:07.341" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230424 17:32:02.335" endtime="20230424 17:32:07.341"/>
+</kw>
+<status status="PASS" starttime="20230424 17:32:02.326" endtime="20230424 17:32:07.341"/>
+</kw>
+<kw name="Fechar o Navegador" library="resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 17:32:07.342" endtime="20230424 17:32:09.506"/>
+</kw>
+<status status="PASS" starttime="20230424 17:32:07.342" endtime="20230424 17:32:09.506"/>
+</kw>
+<status status="PASS" starttime="20230424 17:31:53.507" endtime="20230424 17:32:09.508"/>
+</test>
+<test id="s1-t4" name="Deve Vvalidar um usuario invalido">
+<kw name="Abrir o Navegador" library="resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 17:32:09.511" level="INFO">Opening browser 'Chrome' to base url 'https://portal.trademap.com.br/'.</msg>
+<status status="PASS" starttime="20230424 17:32:09.511" endtime="20230424 17:32:15.592"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230424 17:32:15.593" endtime="20230424 17:32:15.736"/>
+</kw>
+<status status="PASS" starttime="20230424 17:32:09.511" endtime="20230424 17:32:15.736"/>
+</kw>
+<kw name="Dado que estou na pagina de login da TradeMap" library="resource">
+<kw name="Acessar a página home do site" library="resource">
+<doc>LOGIN</doc>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>TradeMap</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 17:32:15.748" level="INFO">Page title is 'TradeMap'.</msg>
+<status status="PASS" starttime="20230424 17:32:15.740" endtime="20230424 17:32:15.748"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>time_=2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 17:32:17.760" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230424 17:32:15.748" endtime="20230424 17:32:17.760"/>
+</kw>
+<status status="PASS" starttime="20230424 17:32:15.739" endtime="20230424 17:32:17.760"/>
+</kw>
+<status status="PASS" starttime="20230424 17:32:15.739" endtime="20230424 17:32:17.761"/>
+</kw>
+<kw name="Quando coloco o Login usando um usuário inválido" library="resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ACESSAR}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 17:32:17.762" endtime="20230424 17:32:17.788"/>
+</kw>
+<kw name="Login with" library="resource">
+<arg>36583161844</arg>
+<arg>${SENHA_GERAL}</arg>
+<doc>CASOS DE TESTES VALIDOS</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${LOGIN}</arg>
+<arg>text=${uname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 17:32:17.789" level="INFO">Typing text '36583161844' into text field 'cpf'.</msg>
+<status status="PASS" starttime="20230424 17:32:17.789" endtime="20230424 17:32:17.892"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${SENHA}</arg>
+<arg>text=${pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 17:32:17.893" level="INFO">Typing text 'Teste2023.' into text field 'password'.</msg>
+<status status="PASS" starttime="20230424 17:32:17.893" endtime="20230424 17:32:17.993"/>
+</kw>
+<status status="PASS" starttime="20230424 17:32:17.788" endtime="20230424 17:32:17.993"/>
+</kw>
+<status status="PASS" starttime="20230424 17:32:17.761" endtime="20230424 17:32:17.993"/>
+</kw>
+<kw name="E Quando clico em Entrar na minha conta" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ACESSAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 17:32:17.994" level="INFO">Clicking element '//button[normalize-space()='Entrar na minha conta']'.</msg>
+<status status="PASS" starttime="20230424 17:32:17.994" endtime="20230424 17:32:18.058"/>
+</kw>
+<status status="PASS" starttime="20230424 17:32:17.994" endtime="20230424 17:32:18.058"/>
+</kw>
+<kw name="Então deve aparecer a mensagem E-mail ou senha incorretos, revise e tente novamente" library="resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MSG_INVALIDA}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 17:32:18.059" endtime="20230424 17:32:20.065"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230424 17:32:20.269" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230424 17:32:20.065" endtime="20230424 17:32:20.269"/>
+</kw>
+<status status="PASS" starttime="20230424 17:32:18.058" endtime="20230424 17:32:20.270"/>
+</kw>
+<kw name="Fechar o Navegador" library="resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 17:32:20.271" endtime="20230424 17:32:22.448"/>
+</kw>
+<status status="PASS" starttime="20230424 17:32:20.271" endtime="20230424 17:32:22.448"/>
+</kw>
+<status status="PASS" starttime="20230424 17:32:09.510" endtime="20230424 17:32:22.450"/>
+</test>
+<status status="PASS" starttime="20230424 17:31:19.667" endtime="20230424 17:32:22.453"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Casos">Casos</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
